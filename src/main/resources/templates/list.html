@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head> 
+	    <title>Calculator</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <style>
+			body {
+			  background-color: white;
+			  margin-left: 20px;
+			  font-family: Arial, Helvetica, sans-serif
+			}		
+			h1 {
+			  color: black;
+			}
+
+			table {
+			  color: black;
+			  border-collapse: collapse;
+			}
+			
+			tr {
+			  border-bottom: 1pt solid gray;
+			}
+			td, th {
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Lista med beräkningar</h1>
+		<p />
+		<p />
+		<table>
+		    <thead>
+		        <tr>
+		            <th style="width: 5em">Tal 1</th>
+		            <th style="width: 2em">Op.</th>
+		            <th style="width: 7em">Tal 2</th>
+		            <th style="width: 5em">Resultat</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr th:each="c : ${calculations}">
+		            <td><span th:text="${c.a}"></span></td>
+		            <td><span th:text="${c.operation}"></span></td>
+		            <td><span th:text="${c.b}"></span></td>
+		            <td><span th:text="${c.result}"></span></td>
+		        </tr>
+		    </tbody>
+		</table>
+		<br />
+		<div>
+			<a th:href="@{/add}" th:text="Addera" />
+	    	<a th:href="@{/subtract}" th:text="Subtrahera" />
+	    	<a th:href="@{/multiply}" th:text="Multiplicera" />
+	    	<a th:href="@{/divide}" th:text="Dividera" />
+    	</div>
+	</body>
+</html>

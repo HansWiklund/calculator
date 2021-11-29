@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Säker journalutlämning</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/style/inera-master-0.16.0.css}" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="iu-mx-lg">
+    <h1>Dividera</h1>
+    <p />
+    <form action="#" th:action="@{/calculate}" th:object="${calculation}" method="post" name="calc">
+      <input type="text" name="a" th:value="${calculation.a}" />
+      <input type="hidden" name="operation" th:value="${calculation.operation}" />
+      <span th:text="${calculation.operation}"></span>
+      <input type="text" name="b" th:value="${calculation.b}" />
+      <input type="submit" name="submit" th:value="Beräkna" />
+    </form>
+  </div>
+</body>
+</html>
